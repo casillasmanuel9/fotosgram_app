@@ -40,6 +40,8 @@ export class Tab2Page {
       coords: null,
     };
 
+    this.tempImages = [];
+
     this.route.navigateByUrl("/main/tabs/tab1");
   }
 
@@ -85,6 +87,7 @@ export class Tab2Page {
     const img = window.Ionic.WebView.convertFileSrc(imageUrl);
     console.log(img);
 
+    this.postService.subirImagen(image.path);
     this.tempImages.push(img);
   }
 }
